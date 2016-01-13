@@ -3,11 +3,13 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+
     <link rel="stylesheet" href="styles.css">
-    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="scripts.js"></script>
-    <title>Weather App</title>
+    <!--<script src="jquery-2.2.0.js" type="text/javascript"></script>
+    --><title>Weather App</title>
 </head>
 <body>
 
@@ -15,16 +17,17 @@
     <div id='cssmenu'>
         <ul>
 
-            <li class="active menu"
-                data-tab="tab1"><a href="#forecast">Weather Forecast</a></li>
+            <li class="menu active"
+                data-tab="tab1"><a href="#currentweather">Current Weather</a></li>
 
             <li class="menu"
-                data-tab="tab2"><a href="#currentweather">Current Weather</a></li>
+                data-tab="tab2"><a href="#forecast">Weather Forecast</a></li>
 
             <li class="menu"
-                data-tab="tab3"><a href="#page1">Page 1</a></li>
+                data-tab="tab3"><a href="#page1">Waiver</a></li>
 
-            <li class="menu"><a href="#page2">Page 2</a></li>
+            <li class="menu"
+                data-tab="tab4"><a href="#page2">About</a></li>
 
             <li class="menu"
                 data-tab="tab5"><a href="#contact">Contact Info</a></li>
@@ -32,8 +35,20 @@
         </ul>
     </div>
     <div class="tab-content">
+        <div id="tab1" class="tab active">
+            <div class="title"> Current Weather</div>
+            <div class="vert-flex" id="weather-div">
+                <div class="horiz-flex">
+                    <div style="font-size:120px;">98&deg</div>
+                    <div><img srcset="//static.ksl.com/images/weather/New2013/PNG_RT/partly-cloudy.png" height="200px"
+                              width="200"></div>
+                </div>
+                <div id="weather-type">PARTLY CLOUDY</div>
 
-        <div id="tab1" class="tab ">
+            </div>
+        </div>
+
+        <div id="tab2" class="tab">
             <div class="title">Weather Forecast</div>
             <div>
                 <table class="forecast_table" rules="cols" rule-color="#f2f2f2">
@@ -125,68 +140,54 @@
                     </tr>
                     </tbody>
                 </table>
-            <pre>This is a website!
-                    this      <strong>website</strong> has    some cool
-                        formatting that doesn't really lo  ok good.
-            </pre>
-
-            </div>
-        </div>
-
-
-        <div id="tab2" class="tab active ">
-            <div class="title"> Current Weather</div>
-            <div class="vert-flex" id="weather-div">
-                <div class="horiz-flex">
-                    <div style="font-size:120px;">98&deg</div>
-                    <div><img srcset="//static.ksl.com/images/weather/New2013/PNG_RT/partly-cloudy.png" height="200px" width="200"></div>
-                </div>
-                <div id="weather-type">PARTLY CLOUDY</div>
-
-
             </div>
         </div>
 
         <div id="tab3" class="tab">
-            <div>
-                Sign your life away! You don't even need to know why.
-            </div>
-            <br>
+            <div class="title">Waiver</div>
+            <div class="body-text">
+                <div style='word-wrap:break-word'>
+                    Sign your life away! You don't even need to know why.
+                </div>
+                <br>
 
-            <form>
-                First name:<br>
-                <input type="text" name="firstname"><br>
-                Last name:<br>
-                <input type="text" name="lastname">
-            </form>
-            <button>Submit!</button>
+                <form id="waiverForm" method="post" onsubmit="sendWaiver()">
+                    First name:<br>
+                    <input type="text" name="firstname"><br>
+                    Last name:<br>
+                    <input type="text" name="lastname">
+                    <br>
+                    <input type="submit" value="Submit!">
+                </form>
+            </div>
+
+        </div>
+
+        <div id="tab4" class="tab">
+            <div class="title">About</div>
+            <div class="body-text">
+            <pre style='word-wrap:break-word'>This is a website!
+                    this      particular <strong>page</strong> has    some cool
+                        formatting that doesn't really lo  ok good.
+            </pre>
+            </div>
         </div>
 
         <div id="tab5" class="tab">
-
-            <div id="header">
-                <div id="music"><a href="#">Music</a></div>
-                <div id="about"><a href="#">About</a></div>
-                <div id="contact"><a href="#">Contact</a></div>
-               <!-- <div id="resumetoggle"><a href="#">Resume</a> </div>-->
-            </div>
-
-            <div id="musicinfo">
-                <p>Music info div</p>
-            </div>
-
-
             <div class="title">Justin Liu</div>
             <div class="body-text">
-                <div>+1 (801) 836-9260</div>
-                <div><img src="http://www.un.org/undss/sites/www.un.org.undss/files/u7/blue-mail-icon.png" width="40px">liukaichi@gmail.com</div>
+                <div><img style="vertical-align: middle; padding: 5px 0px ;"
+                        src="http://icons.iconarchive.com/icons/chrisbanks2/cold-fusion-hd/128/phone-blue-icon.png"
+                        width="40px"
+                        > +1 (801) 836-9260
+                </div>
+                <div><img style="vertical-align: middle; padding: 5px 0px;"
+                        src="https://icons.iconarchive.com/icons/flaticonmaker/flat-style/256/email-icon.png" width="40px">
+                    liukaichi@gmail.com
+                </div>
                 <br>
 
-                <div>
-                    You can view my full resume <a id="resumetoggle" href="#">here</a>
-                    <div id="resume">stuff!<iframe  src="https://drive.google.com/file/d/0B5xDWPeY3kHpTTA1QXJJUTJIQ2s/preview" width="100%" height="480"></iframe>
-                    </div>
-                </div>
+                <div>You can view my full resume <a href="https://bit.ly/1kPqUsA" target="_blank">here</a></div>
             </div>
         </div>
     </div>

@@ -24,3 +24,19 @@ $(document).ready(
         });
     });
 
+function sendWaiver(){
+    var x = document.getElementById("waiverForm");
+    var text = "Thank you, " + x.elements[0].value + " " + x.elements[1].value + "! May the odds be ever in your favor.";
+
+    alert(text);
+}
+
+function myFunction() {
+    var x = document.getElementById("frm1");
+    var text = "";
+    var i;
+    for (i = 0; i < x.length ;i++) {
+        text += x.elements[i].value + "<br>";
+    }
+    document.getElementById("demo").innerHTML = text;
+}
