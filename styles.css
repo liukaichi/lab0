@@ -7,7 +7,7 @@ body{
     font-family: Raleway, sans-serif;
 }
 #page-wrap {
-    width: 65vw;
+    width: 70vw;
     min-width: 700px;
     height:100vh;
     overflow: hidden;
@@ -33,7 +33,7 @@ body{
 
 .tab {
     display:none;
-    max-width: 80%;
+    max-width: 100%;
     margin: 0 auto;
 
 
@@ -83,7 +83,7 @@ table{
 
 .title{
     font-size: 64px;
-    padding-left: 30px;
+    /*padding-left: 30px;*/
     font-family: Raleway,sans-serif;
     margin: 5%;
 }
